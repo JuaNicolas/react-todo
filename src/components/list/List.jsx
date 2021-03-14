@@ -1,14 +1,17 @@
 import ListItem from "../list-item/ListItem";
 
-function List({ value }) {
+function List({ value, deleteTodo }) {
   return (
-    <>
-      <ol>
-        {value.map(({ key, value }) => (
-          <ListItem key={key} value={value}></ListItem>
-        ))}
-      </ol>
-    </>
+    <ol>
+      {value.map(({ key, value }) => (
+        <ListItem
+          key={key}
+          value={value}
+          date={key}
+          deleteTodo={deleteTodo}
+        ></ListItem>
+      ))}
+    </ol>
   );
 }
 
